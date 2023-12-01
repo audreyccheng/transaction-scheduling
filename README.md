@@ -6,7 +6,7 @@ This repository contains:
 1. DjinnDB, which modifies [RocksDB](https://rocksdb.org/) to add a classifier that predicts hot key conflict patterns, our SMF scheduler, and a schedule-first concurrency control protocol, MVSchedO
 2. Benchmarking code for the paper with benchmarks based on [OLTPBench](https://github.com/oltpbenchmark/oltpbench) and [TAOBench](https://taobench.org/)
 3. Makespan simulator that takes transaction traces as input and makespans for a specified isolation level and concurrency control protocol
-4. Extended version of our paper with JSS formulation of transaction scheduling
+4. JSS formulation of transaction scheduling as an appendix to the paper
 
 This repository is structured as follows:
 - /benchmarks - the application benchmarks tested on DjinnDB
