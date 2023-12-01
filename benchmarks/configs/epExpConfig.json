@@ -1,0 +1,31 @@
+{
+    "exp_length": "30",
+    "ramp_up": "5",
+    "ramp_down": "0",
+    "use_backoff": "true",
+    "useloader": "false",
+    "must_load_keys": "false",
+    "nb_loader_threads": "10",
+    "nb_client_threads": "18",
+    "n_worker_threads": "20",
+    "proxy_ip_address": "localhost",
+    "useproxy": "true",
+    "node_ip_address": "localhost",
+    "proxy_listening_port": "23101",
+    "client_type": "shield",
+    "oram_value_size": "1024",
+    "value_size": "1024",
+    "must_schedule": "true",
+
+    "prob_trx_reviewitemid": "16",
+    "prob_trx_reviewuser": "0",
+    "prob_trx_avgusertrust": "0",
+    "prob_trx_avgratingitem": "16",
+    "prob_trx_itemreview": "16",
+    "prob_trx_updateuser": "0",
+    "prob_trx_updateitem": "16",
+    "prob_trx_updatereview": "0",
+    "prob_trx_updatetrust": "0",
+
+    "run_name": "ycsb_test"
+  }

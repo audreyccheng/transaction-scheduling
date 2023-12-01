@@ -1,0 +1,25 @@
+{
+  "exp_length": "10",
+  "ramp_up": "10",
+  "ramp_down": "5",
+  "useloader": "true",
+  "load_keys": "true",
+  "nb_loader_threads": "10",
+  "nb_client_threads": "19",
+  "n_worker_threads": "20",
+  "n_receiver_net_threads": "5",
+  "n_sender_net_threads": "5",
+  "proxy_ip_address": "localhost",
+  "useproxy": "true",
+  "delete_db": "false",
+  "use_pessimistic": "true",
+
+  "node_ip_address": "localhost",
+  "node_listening_port":"23101",
+  "proxy_listening_port": "23101",
+  "client_type": "shield",
+  "oram_value_size": "1024",
+  "value_size": "1024",
+  "nb_keys": "1000",
+  "run_name": "ycsb_test"
+}

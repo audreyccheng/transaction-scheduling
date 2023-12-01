@@ -1,0 +1,20 @@
+{
+  "threads": "1",
+  "ramp_up": "5",
+  "ramp_down": "5",
+  "exp_length": "10",
+  "req_threads_per_bm_thread": "3",
+  "client_type": "redis-postgres",
+  "postgres_hostname": "44.239.75.223",
+  "redis_hostname": "35.80.199.33",
+  "redis_enabled": "true",
+  "redis_prefetch": "false",
+  "oram_value_size": "1024",
+  "base_size": "10000",
+  "nb_objects": "100000",
+  "latency": "0",
+  "nb_loader_threads": "32",
+  "run_name": "taobench_test",
+  "prob_trx_group": "100",
+  "txn_size_group": "10"
+}

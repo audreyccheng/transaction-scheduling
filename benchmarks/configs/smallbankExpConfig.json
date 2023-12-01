@@ -1,0 +1,14 @@
+{
+  "threads": "256",
+  "exp_length": "180",
+  "req_threads_per_bm_thread": "4",
+  "client_type": "redis-postgres",
+  "postgres_hostname": "13.52.242.10",
+  "redis_hostname": "35.80.199.33",
+  "redis_enabled": "false",
+  "redis_prefetch": "false",
+  "oram_value_size": "200",
+  "nb_accounts": "100000",
+  "nb_loader_threads": "10",
+  "run_name": "smallbank_test"
+}

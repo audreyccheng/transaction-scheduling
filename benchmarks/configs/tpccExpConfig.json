@@ -1,0 +1,15 @@
+{
+  "threads": "16",
+  "req_threads_per_bm_thread": "3",
+  "exp_length": "180",
+  "ramp_up": "60",
+  "client_type": "redis-postgres",
+  "postgres_hostname": "44.239.75.223",
+  "redis_hostname": "35.80.199.33",
+  "redis_enabled": "false",
+  "redis_prefetch": "false",
+  "oram_value_size": "1024",
+  "nb_warehouses": "20",
+  "nb_loader_threads": "20",
+  "run_name": "tpcc_test"
+}
