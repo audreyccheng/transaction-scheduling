@@ -1,15 +1,15 @@
-# DjinnDB
+# DariusDB
 
-This repository contains code implementing DjinnDB, a transactional scheduling system. DjinnDB searches for and executes fast schedules for transactional workloads.
+This repository contains code implementing DariusDB, a transactional scheduling system. DariusDB searches for and executes fast schedules for transactional workloads.
 
 This repository contains:
-1. DjinnDB, which modifies [RocksDB](https://rocksdb.org/) to add a classifier that predicts hot key conflict patterns, our SMF scheduler, and a schedule-first concurrency control protocol, MVSchedO
+1. DariusDB, which modifies [RocksDB](https://rocksdb.org/) to add a classifier that predicts hot key conflict patterns, our SMF scheduler, and a schedule-first concurrency control protocol, MVSchedO
 2. Benchmarking code for the paper with benchmarks based on [OLTPBench](https://github.com/oltpbenchmark/oltpbench) and [TAOBench](https://taobench.org/)
 3. Makespan simulator that takes transaction traces as input and makespans for a specified isolation level and concurrency control protocol
-4. JSS formulation of transaction scheduling as an appendix to the paper
+4. Extended version of our paper with JSS formulation of transaction scheduling
 
 This repository is structured as follows:
-- /benchmarks - the application benchmarks tested on DjinnDB
+- /benchmarks - the application benchmarks tested on DariusDB
 - /rocksdb - the modified version of RocksDB supporting transactional scheduling
 - /simulator - the makespan simulator
 
@@ -21,8 +21,8 @@ Prerequisites:
 
 Note: if running on EC2 or other cloud providers, make sure security groups / firewalls allow all traffic.
 
-## DjinnDB
-To run benchmarks against DjinnDB, start DjinnDB and the benchmark code on separate machines. The benchmark starts up worker threads that send transactions over the network to the machine hosting DjinnDB. These requests are received by a database proxy, which then redirects the transactions to DjinnDB. We mainly modify /rocksdb/utilities/transactions and /rocksdb/java since the benchmark is in Java.
+## DariusDB
+To run benchmarks against DariusDB, start DariusDB and the benchmark code on separate machines. The benchmark starts up worker threads that send transactions over the network to the machine hosting DariusDB. These requests are received by a database proxy, which then redirects the transactions to DariusDB. We mainly modify /rocksdb/utilities/transactions and /rocksdb/java since the benchmark is in Java.
 
 To run a benchmark:
 
@@ -52,9 +52,9 @@ To run a benchmark:
 
     - `node_ip_address`: IP address of benchmark machine
 
-    - `proxy_ip_address`: IP addres of DjinnDB machine
+    - `proxy_ip_address`: IP addres of DariusDB machine
 
-    - `proxy_listening_port`: post on which DjinnDB machine is listening for client benchmark requests
+    - `proxy_listening_port`: post on which DariusDB machine is listening for client benchmark requests
 
     - `must_schedule`: turn on / off scheduler
 
@@ -62,7 +62,7 @@ To run a benchmark:
 
 Note: to build a different jar, edit `pom.xml` plugin.
 
-To build DjinnDB jar:
+To build DariusDB jar:
 
 1. `mkdir build; cd build`
 
@@ -72,11 +72,11 @@ To build DjinnDB jar:
 
 3. `make DEBUG_LEVEL=0 rocksdbjava`
 
-To run DjinnDB and database proxy, add DjinnDB build file to jar of database proxy:
+To run DariusDB and database proxy, add DariusDB build file to jar of database proxy:
 
 1. `cd benchmarks`
 
-2. `mvn install:install-file  -Dfile=DjinnDB jar> -DgroupId=org.rocksdb -DartifactId=rocksdbjni -Dversion=1 -Dpackaging=jar -DgeneratePom=true`
+2. `mvn install:install-file  -Dfile=DariusDB jar> -DgroupId=org.rocksdb -DartifactId=rocksdbjni -Dversion=1 -Dpackaging=jar -DgeneratePom=true`
 
 3. `mvn compile assembly:single`
 
@@ -92,15 +92,15 @@ To run DjinnDB and database proxy, add DjinnDB build file to jar of database pro
 
     - `node_ip_address`: IP address of benchmark machine
 
-    - `proxy_ip_address`: IP addres of DjinnDB machine
+    - `proxy_ip_address`: IP addres of DariusDB machine
 
-    - `proxy_listening_port`: post on which DjinnDB machine is listening for client benchmark requests
+    - `proxy_listening_port`: post on which DariusDB machine is listening for client benchmark requests
 
     - `useproxy`: whether or not proxy should be used
 
-    -  `delete_db`: delete contents of DjinnDB
+    -  `delete_db`: delete contents of DariusDB
 
-5. To start DjinnDB and database proxy: `java -jar ___.jar ___ExpConfig.json`
+5. To start DariusDB and database proxy: `java -jar ___.jar ___ExpConfig.json`
 
 ## Makespan simulator
 
