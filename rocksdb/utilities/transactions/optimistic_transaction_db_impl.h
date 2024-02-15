@@ -886,6 +886,7 @@ class OptimisticTransactionDBImpl : public OptimisticTransactionDB {
 
     uint32_t idx = hk_to_int_map_[key];
     hk_mutexes_[idx].lock();
+    // std::cout << "Debug: " << std::endl;
     // std::cout << "ScheduleKey: " << key << " cluster: " << cluster << " txn: " << txn->GetIndex() << std::endl;
 
     if (check_ongoing_hkey(idx, rw, txn->GetIndex())) {
