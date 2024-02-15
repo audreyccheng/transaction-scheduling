@@ -125,6 +125,7 @@ public class NewOrderTransaction extends BenchmarkTransaction{
       dTax = (Integer) districtTable.getColumn(8, dRow);
       dNextOid = (Integer) districtTable.getColumn(10, dRow);
 //      System.out.println("[NewOrder] Wid: " + wid + " " + did + " " + dNextOid);
+      // System.out.println("debug");
 
       cDiscount = (Integer) customerTable.getColumn(15, cRow);
       cLastName = (String) customerTable.getColumn(5, cRow);
