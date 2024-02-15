@@ -2156,15 +2156,6 @@ class Workload:
                 if cost < min_cost:
                     min_cost = cost
                     insert_index = j
-            #     min_costs.append(min_cost)
-            #     insert_indicies.append(insert_index)
-            # # running_cost = self.txns[t][0][3]
-            # if not inserted:
-            #     min_min_cost = min(min_costs)
-            #     min_idx = min_costs.index(min_min_cost)
-            #     t = indicies.pop(txn_indicies[min_idx])
-            #     txn_seq.insert(insert_indicies[min_idx], t)
-            #     # print(min_costs, txn_indicies, insert_indicies)
             txn_seq.insert(insert_index, t)
         if self.debug:
             print(txn_seq)
