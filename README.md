@@ -1,5 +1,9 @@
 # DariusDB
 
+## Extended Version of Paper
+We include the extended version of our paper (Appendix) as a PDF in the root repository.
+
+## Code
 This repository contains code implementing DariusDB, a transactional scheduling system. DariusDB searches for and executes fast schedules for transactional workloads.
 
 This repository contains:
